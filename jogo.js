@@ -64,3 +64,20 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+
+// Adiciona o evento de clique ao botão
+playPauseBtn.addEventListener('click', togglePlayPause);
+
+
+window.addEventListener('load', function() {
+  const music = document.getElementById('backgroundMusic');
+  
+  // Remove o mudo e começa a tocar a música
+  music.muted = false;
+  music.play().catch(error => {
+    // Se o navegador bloquear, exibe uma mensagem ou lida com o erro
+    console.log('O navegador bloqueou a reprodução automática.', error);
+  });
+});

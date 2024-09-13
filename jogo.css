@@ -86,4 +86,14 @@
       font-size: 1.5em; /* Diminui o tamanho do título em telas pequenas */
     }
   }
+
+  .music-controls {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  audio {
+    width: 100%;
+    max-width: 300px;
+  }
   
