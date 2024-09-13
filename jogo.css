@@ -87,13 +87,4 @@
     }
   }
 
-  .music-controls {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  audio {
-    width: 100%;
-    max-width: 300px;
-  }
   

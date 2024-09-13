@@ -65,19 +65,24 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+// Seleciona o elemento de áudio e o botão de controle
+const music = document.getElementById('backgroundMusic');
+const playPauseBtn = document.getElementById('playPauseBtn');
 
+// Estado inicial: música pausada
+let isPlaying = false;
+
+// Função para alternar entre tocar e pausar
+function togglePlayPause() {
+  if (isPlaying) {
+    music.pause();
+    playPauseBtn.textContent = 'Play Música'; // Troca o texto do botão
+  } else {
+    music.play();
+    playPauseBtn.textContent = 'Pausar Música'; // Troca o texto do botão
+  }
+  isPlaying = !isPlaying; // Inverte o estado
+}
 
 // Adiciona o evento de clique ao botão
 playPauseBtn.addEventListener('click', togglePlayPause);
-
-
-window.addEventListener('load', function() {
-  const music = document.getElementById('backgroundMusic');
-  
-  // Remove o mudo e começa a tocar a música
-  music.muted = false;
-  music.play().catch(error => {
-    // Se o navegador bloquear, exibe uma mensagem ou lida com o erro
-    console.log('O navegador bloqueou a reprodução automática.', error);
-  });
-});
